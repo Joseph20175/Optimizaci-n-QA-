@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA Optimizador - Cálculo Diferencial</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Optimización de Costos y Tiempo en Pruebas de Software (QA)</h1>
+        <p class="subtitle">Prototipo Matemático basado en Aplicación de Derivadas</p>
+    </header>
+
+    <main class="container">
+        <section class="panel inputs-panel">
+            <h2>Variables del Modelo</h2>
+            <p class="instruction">Modifica los valores para recalcular el punto de equilibrio óptimo en tiempo real.</p>
+            
+            <div class="input-group">
+                <label for="costoCloud">Costo Unitario Cloud (C1 por prueba en paralelo):</label>
+                <input type="number" id="costoCloud" value="8" min="1" step="0.5">
+            </div>
+
+            <div class="input-group">
+                <label for="costoEspera">Factor Costo de Espera / Productividad (C2):</label>
+                <input type="number" id="costoEspera" value="200" min="1" step="10">
+            </div>
+
+            <div class="formula-box">
+                <p><strong>Función de Costo Total:</strong></p>
+                <p class="formula">C(x) = <span id="lblC1">8</span>x + <span id="lblC2">200</span>/x</p>
+            </div>
+        </section>
+
+        <section class="panel results-panel">
+            <h2>Resultados de la Optimización</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-card highlight">
+                    <h3>Cantidad Óptima (x)</h3>
+                    <p class="metric-value"><span id="optimoX">5</span> </p>
+                    <p class="metric-desc">Pruebas en paralelo</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Costo Mínimo Calculado</h3>
+                    <p class="metric-value">S/. <span id="costoMinimo">80.00</span></p>
+                    <p class="metric-desc">Gasto operativo total optimizado</p>
+                </div>
+            </div>
+
+            <div class="graph-container">
+                <canvas id="costChart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>NRC: 40106 - Grupo LOS CABLES | Huancayo, Perú - 2026</p>
+    </footer >
+
+    <script src="app.js"></script>
+</body>
+</html>
